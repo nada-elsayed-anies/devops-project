@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v4 #Download/checkout the repository's code so the following steps can work with it.
 
       - name: Check HTML file exists
-        run: test -f HomePage.HTML
+        run: test -f index.html
         
   deploy:
     needs: validate #Don't deploy unless validation succeeds.
