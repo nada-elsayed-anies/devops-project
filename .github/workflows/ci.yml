@@ -22,8 +22,8 @@ jobs:
 
       - name: Check HTML file exists
         run: test -f HomePage.HTML
-
-deploy:
+        
+  deploy:
     needs: validate #Don't deploy unless validation succeeds.
     if: github.event_name == 'push'
 
