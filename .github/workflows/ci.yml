@@ -14,14 +14,23 @@ permissions:
 
 jobs:
   validate:
-    runs-on: ubuntu-latest #temporary Linux runner to execute our job
+   runs-on: ubuntu-latest #temporary Linux runner to execute our job
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4 #Download/checkout the repository's code so the following steps can work with it.
+   steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      - name: Check HTML file exists
-        run: test -f index.html
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22
+        cache: npm
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run tests
+      run: npm test
         
   deploy:
     needs: validate #Don't deploy unless validation succeeds.
