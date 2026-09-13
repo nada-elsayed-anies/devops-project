@@ -4,7 +4,7 @@ function getMessage() {
 
 if (typeof document !== "undefined") {
     document
-        .getElementById("helloButton")
+        .getElementById("triggerActionBtn")
         .addEventListener("click", function () {
             document.getElementById("message").textContent = getMessage();
         });
