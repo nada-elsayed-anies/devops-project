@@ -1,4 +1,4 @@
-name: HTML CI #the name of our pipeline
+name: CI/CD #the name of our pipeline
 
 on:
   push:
@@ -7,6 +7,10 @@ on:
   pull_request:
     branches:
       - main #also run when someone creates a Pull Request targeting main
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   validate:
@@ -18,3 +22,29 @@ jobs:
 
       - name: Check HTML file exists
         run: test -f HomePage.HTML
+
+deploy:
+    needs: validate #Don't deploy unless validation succeeds.
+    if: github.event_name == 'push'
+
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3 #"The files produced/prepared by the pipeline that we want to pass to the next stage."
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
