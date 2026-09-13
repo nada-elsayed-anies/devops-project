@@ -1,20 +1,20 @@
-name: HTML CI #the name of our pipeline
+name: HTML CI
 
 on:
   push:
     branches:
-      - main #Run this workflow whenever someone pushes code to the main branch
+      - main 
   pull_request:
     branches:
-      - main #also run when someone creates a Pull Request targeting main
+      - main
 
 jobs:
   validate:
-    runs-on: ubuntu-latest #temporary Linux runner to execute our job
+    runs-on: ubuntu-latest 
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4 #Download/checkout the repository's code so the following steps can work with it.
+        uses: actions/checkout@v4
 
       - name: Check HTML file exists
         run: test -f HomePage.html
