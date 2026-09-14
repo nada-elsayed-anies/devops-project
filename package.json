@@ -4,8 +4,9 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "jest"
-  },
+  "test": "jest",
+  "lint": "eslint ."
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nada-elsayed-anies/devops-project.git"
@@ -19,6 +20,8 @@
   },
   "homepage": "https://github.com/nada-elsayed-anies/devops-project#readme",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.10.0",
     "jest": "^30.5.1"
   }
 }
