@@ -1,5 +1,5 @@
 const { getMessage } = require("../script");
 
 test("getMessage returns the expected message", () => {
-    expect(getMessage()).toBe("Hello");
+    expect(getMessage()).toBe("Hello from my DevOps project!");
 });

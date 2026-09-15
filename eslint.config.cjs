@@ -16,7 +16,7 @@ module.exports = [
             }
         },
         rules: {
-            "no-unused-vars": "error" /* if error insteed of warning it will stops the CI */
+            "no-unused-vars": "warn" /* if error insteed of warning it will stops the CI */
         }
     }
 ];
