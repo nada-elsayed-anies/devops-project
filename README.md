@@ -1,4 +1,4 @@
-# 🚀 My First DevOps Project
+# 🚀 DevOps Project
 
 A simple web application created to learn and practice **Git, CI/CD, automated testing, and deployment**.
 

@@ -11,4 +11,4 @@ if (typeof document !== "undefined") {
 }
 
 module.exports = { getMessage };
-/*const unusedVariable = "This should cause a warning";*/
+const unusedVariable = "This should cause a warning";
