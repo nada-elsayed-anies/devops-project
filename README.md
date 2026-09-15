@@ -12,6 +12,7 @@ A simple web application created to learn and practice **Git, CI/CD, automated t
 * Git & GitHub
 * GitHub Actions
 * GitHub Pages
+* Linting
 
 ## 🔄 CI/CD Pipeline
 
@@ -35,27 +36,13 @@ If the tests fail, the deployment is stopped.
 
 ## 🧪 Testing
 
-Automated tests are written using **Jest**.
+Automated tests are written using **Jest** or **lint**.
 
 Run tests locally:
 
 ```bash
 npm test
-```
-
-## 📁 Project Structure
-
-```text
-├── index.html
-├── style.css
-├── script.js
-├── tests/
-│   └── app.test.js
-├── package.json
-├── package-lock.json
-└── .github/
-    └── workflows/
-        └── ci.yml
+npm.cmd run lint
 ```
 
 ## 🎯 What I Learned
@@ -70,7 +57,6 @@ npm test
 
 ## 🚀 Next Steps
 
-* Add linting
 * Add more tests
 * Add a build process
 * Add security checks

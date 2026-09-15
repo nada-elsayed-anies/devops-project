@@ -29,10 +29,10 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Run tests
+    - name: Run tests #mandatory step to run Unit Test on the codebase
       run: npm test
-      
-    - name: Run ESLint
+
+    - name: Run ESLint #mandatory step to run ESLint Test on the codebase
       run: npm run lint 
         
   deploy:
@@ -57,6 +57,6 @@ jobs:
         with:
           path: .
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages #Host the website on GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
